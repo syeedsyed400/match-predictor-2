@@ -17,21 +17,30 @@ https://2025aa05925-match-predictor.streamlit.app/
   
 ## 3. Screenshots of Assignment Execution on BITS Virtual Lab
 
-### Streamlit App Execution in Bits virual Lab - Localhost
+### 3.1 Streamlit App Execution in Bits virual Lab - Localhost
 
 ![Streamlit App Execution](image-8.png)
+
 ![Streamlit App Output](image-9.png)
 
-### Deployed App on Streamlit Community Cloud - 2025aa05925 Match Predictor
+### 3.2 Deployed App on Streamlit Community Cloud - 2025aa05925 Match Predictor
 
 ![Evaluation Metrics](image.png)
+
 ![Model Comparision](image-1.png)
+
 ![Confusion Matrix and Classification Report LR](image-2.png)
+
 ![Confusion Matrix and Classification Report DT](image-3.png)
+
 ![Confusion Matrix and Classification Report KNN](image-4.png)
+
 ![Confusion Matrix and Classification Report NB](image-5.png)
+
 ![Confusion Matrix and Classification Report RF](image-6.png)
+
 ![Confusion Matrix and Classification Report XGB](image-7.png)
+
 
 ## 4. Github README Content
   
