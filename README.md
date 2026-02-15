@@ -114,7 +114,7 @@ ml-match/
 5. Choose branch (usually `main`)
 6. Select `app.py`
 7. Click **Deploy**
-8. Go to [https://github.com/syeedsyed400/match-predictor-2] (https://github.com/syeedsyed400/match-predictor-2 to use deployed app)
+8. Go to [https://match-predictor-2-400.streamlit.app/] (https://match-predictor-2-400.streamlit.app/) to use deployed app
 
 ---
 
