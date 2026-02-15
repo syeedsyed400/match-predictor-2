@@ -1,10 +1,77 @@
-# 🏏 Cricket Match Winner Prediction – ML Classification
+# 2. Mandatory Submission Links  
+  
+Each submission must be a **single PDF file** with the following (maintain the order):  
+  
+## 1. GitHub Repository Link containing  
+
+- Complete source code    
+- `requirements.txt`    
+- A clear `README.md`    
+
+https://github.com/syeedsyed400/2025AA05925-match-predictor  
+  
+## 2. Live Streamlit App Link  
+
+- Deployed using Streamlit Community Cloud    
+
+https://2025aa05925-match-predictor.streamlit.app/  
+
+  
+## 3. Screenshots of Assignment Execution on BITS Virtual Lab
+
+![Evaluation Metrics](image.png)
+![Model Comparision](image-1.png)
+![Confusion Matrix and Classification Report LR](image-2.png)
+![Confusion Matrix and Classification Report DT](image-3.png)
+![Confusion Matrix and Classification Report KNN](image-4.png)
+![Confusion Matrix and Classification Report NB](image-5.png)
+![Confusion Matrix and Classification Report RF](image-6.png)
+![Confusion Matrix and Classification Report XGB](image-7.png)
+
+## 4. Github README Content
+  
+### GitHub Repository Structure - Step 3 of Assignment Details
+
+```
+2025AA05925-match-predictor/
+│── app.py                        # Streamlit web application
+│── requirements.txt              # Python dependencies
+│── README.md                     # Project documentation
+│── Match_dataset.csv             # Training dataset
+│── Match_test_data.csv           # Test dataset
+│── model/                        # Model notebooks (.ipynb)
+│   ├── model_comparison.ipynb
+│   ├── train_models.ipynb
+│   ├── logistic_regression.ipynb
+│   ├── decision_tree.ipynb
+│   ├── knn.ipynb
+│   ├── naive_bayes.ipynb
+│   ├── random_forest.ipynb
+│   └── xgboost_model.ipynb
+```
+
+### Requirements.txt - Step 4 of Assignment Details
+
+- Python 3.12
+- scikit-learn
+- XGBoost
+- Streamlit
+- pandas
+- NumPy
+- matplotlib
+- seaborn
+
+---
+
+### ReadMe Content - Step 5 of Assignment Details
+
+### 🏏 Cricket Match Winner Prediction – ML Classification
 
 An end-to-end Machine Learning project that predicts T20 cricket match outcomes (**Team_A** vs **Team_B**) using six classification models, with an interactive **Streamlit** web application for live evaluation.
 
 ---
 
-## a. Problem Statement
+#### a. Problem Statement
 
 Given pre-match statistics for a T20 cricket encounter — including team rankings, recent form, head-to-head record, venue characteristics, toss details, and technical indices — the goal is to **predict which team will win** the match. This is a **binary classification** problem with the target labels `Team_A` and `Team_B`.
 
@@ -12,7 +79,7 @@ Accurate match-outcome prediction can assist broadcasters, analysts, and fantasy
 
 ---
 
-## b. Dataset Description
+#### b. Dataset Description
 
 | Property | Detail |
 |---|---|
@@ -23,7 +90,7 @@ Accurate match-outcome prediction can assist broadcasters, analysts, and fantasy
 | **Classification Type** | Binary |
 | **Missing Values** | None |
 
-### Key Features
+#### Key Features
 
 | Feature | Description |
 |---|---|
@@ -37,7 +104,7 @@ Accurate match-outcome prediction can assist broadcasters, analysts, and fantasy
 | `Team_A_Tech_Index` / `Team_B_Tech_Index` | Composite technical strength index |
 | `Match_Total` | Total runs scored in the match |
 
-### Preprocessing Performed
+#### Preprocessing Performed
 
 1. **Feature Engineering** – Created difference features (`Ranking_Diff`, `Form_Diff`, `Tech_Diff`, `H2H_Diff`) to capture relative team strength.
 2. **Categorical Encoding** – `Pitch_Type` and `Stage` encoded with `LabelEncoder`; `Toss_Winner` converted to binary flag `Team_A_Won_Toss`; `Toss_Decision` mapped to binary `Toss_Bat`.
@@ -46,8 +113,7 @@ Accurate match-outcome prediction can assist broadcasters, analysts, and fantasy
 
 ---
 
-
-## c. Models Used
+### c. Models Used
 
 All **6 classification models** are implemented on the same dataset. Each model notebook is located in the [`model/`](model/) folder.
 
@@ -83,86 +149,6 @@ All **6 classification models** are implemented on the same dataset. Each model 
 | **Naive Bayes** | Matches KNN at 80 % accuracy and edges it slightly on AUC (0.8797). Despite the strong independence assumption (which rarely holds for match statistics), Gaussian NB benefits from the well-separated class distributions in the standardised feature space. It is the fastest model to train and ideal for quick baseline comparisons, though it plateaus below ensemble methods. |
 | **Random Forest (Ensemble)** | Achieves the **second-best accuracy (84.17 %)** and AUC (0.9046). By aggregating 200 decision trees, it overcomes the single tree's overfitting issue and provides robust predictions. The balanced precision (0.8246) and recall (0.8393) with the highest MCC among non-linear models (0.6824) indicate strong and consistent classification across both classes. |
 | **XGBoost (Ensemble)** | Scores 83.33 % accuracy with AUC 0.8909, closely trailing Random Forest. Gradient boosting sequentially corrects errors, giving it excellent calibration. Its precision and recall are perfectly balanced at 0.8214, showing stable predictions. With additional hyperparameter tuning (e.g., learning rate scheduling, regularisation), XGBoost is likely to surpass all other models on this dataset. |
-
----
-
-## GitHub Repository Structure
-
-```
-2025AA05925-match-predictor/
-│── app.py                        # Streamlit web application
-│── requirements.txt              # Python dependencies
-│── README.md                     # Project documentation
-│── Match_dataset.csv             # Training dataset
-│── Match_test_data.csv           # Test dataset
-│── model/                        # Model notebooks (.ipynb)
-│   ├── model_comparison.ipynb
-│   ├── train_models.ipynb
-│   ├── logistic_regression.ipynb
-│   ├── decision_tree.ipynb
-│   ├── knn.ipynb
-│   ├── naive_bayes.ipynb
-│   ├── random_forest.ipynb
-│   └── xgboost_model.ipynb
-```
-
-## Requirements.txt
-
-- Python 3.12
-- scikit-learn
-- XGBoost
-- Streamlit
-- pandas
-- NumPy
-- matplotlib
-- seaborn
-
----
-
-## Deploy on Streamlit Community Cloud
-
-1. Go to [https://streamlit.io/cloud](https://streamlit.io/cloud)
-2. Sign in using GitHub account
-3. Click **"New App"**
-4. Select your repository
-5. Choose branch (usually `main`)
-6. Select `app.py`
-7. Click **Deploy**
-8. Go to [https://2025aa05925-match-predictor.streamlit.app/] (https://2025aa05925-match-predictor.streamlit.app/) to use deployed app
-
----
-
-## How to Run Locally
-
-```bash
-# 1. Clone the repository
-git clone https://github.com/syeedsyed400/2025AA05925-match-predictor.git
-
-cd 2025AA05925-match-predictor
-
-# 2. Create a virtual environment & install dependencies
-python -m venv .venv
-source .venv/bin/activate        # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-
-# 3. (Optional) Re-train all models – run model/model_comparison.ipynb
-
-# 4. Launch the Streamlit app
-streamlit run app.py
-```
-
----
-
-## Streamlit App Features
-
-| Feature | Description |
-|---|---|
-| **CSV Upload** | Upload your own test CSV (same schema) for evaluation |
-| **Model Selection** | Multi-select dropdown to choose one or more models |
-| **Evaluation Metrics** | Accuracy, AUC, Precision, Recall, F1, MCC displayed in a comparison table |
-| **Confusion Matrix** | Heatmap per selected model |
-| **Classification Report** | Per-class precision, recall, F1-score |
-| **Bar Chart Comparison** | Side-by-side metric comparison across models |
 
 ---
 
